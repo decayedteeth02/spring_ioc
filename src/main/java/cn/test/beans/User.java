@@ -5,6 +5,10 @@ public class User {
     private String username;
     private String realname;
 
+    public User() {
+        System.out.println("User已加载");
+    }
+
     @Override
     public String toString() {
         return "User{" +

@@ -5,4 +5,13 @@
 
 
     <bean class="cn.test.beans.User" id="user"></bean>
+<!--    <bean class="cn.test.beans.User" id="user2">-->
+<!--        <description>用来描述bean是干嘛的</description>-->
+<!--    </bean>-->
+
+    <alias name="user" alias="abc user2 user3"></alias>
+    <!--    设置bean的多个别名-->
+    <bean class="cn.test.beans.User" id="uesr2" name="user3"></bean>
+<!--    使用import可以导入其他spring的xml文件-->
+<!--    <import resource="spring.ioc.xml"></import>-->
 </beans>
