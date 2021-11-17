@@ -1,5 +1,6 @@
 package cn.tests;
 
+import cn.test.beans.Person;
 import cn.test.beans.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,5 +49,21 @@ public class IocTest {
     public void test03(){
         User bean=ioc.getBean("user3",User.class);
         System.out.println(bean+"User3");
+    }
+
+    @Test
+    public void test05(){
+        User bean=ioc.getBean("user5",User.class);
+        System.out.println(bean+"user5");
+    }
+    @Test
+    public void test06(){
+        User bean=ioc.getBean("user6",User.class);
+        System.out.println(bean+"user6");
+    }
+    @Test
+    public void test07(){
+        Person bean=ioc.getBean("person",Person.class);
+        System.out.println(bean);
     }
 }

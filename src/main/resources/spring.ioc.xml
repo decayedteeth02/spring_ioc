@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
@@ -14,4 +15,80 @@
     <bean class="cn.test.beans.User" id="uesr2" name="user3"></bean>
 <!--    使用import可以导入其他spring的xml文件-->
 <!--    <import resource="spring.ioc.xml"></import>-->
+
+
+
+<!--    依赖注入-->
+<!--    注入Begin-->
+<!--    基于setter的依赖注入-->
+    <bean class="cn.test.beans.User" id="user5">
+        <property name="id" value="1"></property>
+        <property name="username" value="ABC"></property>
+        <property name="realname" value="吴彦祖"></property>
+    </bean>
+
+<!--    基于构造函数的依赖注入
+    1.基于name属性设置构造函数
+    2.可以只有value属性
+    3.如果省略name属性，要注意顺序
+    4.还可以使用index参数来代替name
+    发生位置错乱的时候
+        使用name
+        使用index注意参数下标，从0开始
+-->
+    <bean class="cn.test.beans.User" id="user6">
+        <constructor-arg name="id" value="1"></constructor-arg>
+        <constructor-arg name="username" value="ABC"></constructor-arg>
+        <constructor-arg name="realname" value="刘德华"></constructor-arg>
+    </bean>
+
+<!--    复杂数据类型的依赖注入-->
+    <bean class="cn.test.beans.Person" id="person">
+        <property name="id" value="1"></property>
+        <property name="name">
+            <null></null>
+        </property>
+        <property name="gender" value=""></property>
+<!--&lt;!&ndash;        使用外部bean&ndash;&gt;-->
+<!--        <property name="wife" ref="wife"></property>-->
+<!--        使用内部bean来一依赖注入-->
+        <property name="wife">
+            <bean class="cn.test.beans.Wife">
+                <property name="age" value="18"></property>
+                <property name="name" value="迪丽热巴"></property>
+            </bean>
+        </property>
+
+<!--        list注入-->
+<!--        如果是泛型是基本数据类型用value-->
+<!--        如果泛型是bean <bean>-->
+        <property name="hobbies">
+            <list>
+                <value>跳舞</value>
+                <value>唱歌</value>
+            </list>
+        </property>
+
+<!--        map注入-->
+<!--        如果value是基本数据类型<entry key="1" value="java"></entry>-->
+<!--        如果value是bean   value-ref -->
+        <property name="course">
+            <map>
+                <entry key="1" value="java"></entry>
+                <entry key="2" value="数据库"></entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+<!--    使用p命名空间简化基于setter属性注入XML配置-->
+
+    <bean class="cn.test.beans.Wife" id="wife" p:age="18" p:name="迪丽热巴">
+    </bean>
+    <bean class="cn.test.beans.Person" id="person2" p:wife-ref="wife">
+    </bean>
+
+    
+
 </beans>
