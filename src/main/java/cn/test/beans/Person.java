@@ -13,6 +13,8 @@ public class Person {
     private Map<Integer,String> course;
     private Wife wife;
 
+
+
     @Override
     public String toString() {
         return "Person{" +
@@ -80,5 +82,15 @@ public class Person {
 
     public void setWife(Wife wife) {
         this.wife = wife;
+    }
+
+    public Person() {
+        System.out.println("person已加载");
+    }
+    public static Person createPersonFactory(){
+        Child child=new Child();
+        child.setName("儿子");
+        return child;
+
     }
 }

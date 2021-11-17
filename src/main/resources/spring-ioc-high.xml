@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    控制bean的加载顺序，当一个bean想让另一bean在她之前加载可以设置depeng-on-->
+<!--    <bean class="cn.test.beans.Person" id="person" depends-on="wife"></bean>-->
+<!--    <bean class="cn.test.beans.Wife" id="wife"></bean>-->
+
+<!--    懒加载-->
+<!--    <bean class="cn.test.beans.Wife" id="wife" lazy-init="true"></bean>-->
+
+<!--    作用域-->
+<!--    singleton默认值 同一个id始终只会创建一个bean-->
+<!--    prototype每一次使用都会创建一个bean-->
+<!--    <bean class="cn.test.beans.Person" id="person" scope="prototype">-->
+
+<!--    </bean>-->
+
+<!--    使用静态工厂实例化bean-->
+<!--    <bean class="cn.test.beans.PersonFactory" id="personFactory">-->
+
+<!--    </bean>-->
+<!--    <bean class="cn.test.beans.Person" id="person" factory-bean="personFactory" factory-method="createPersonFactory"></bean>-->
+
+         
+
+</beans>

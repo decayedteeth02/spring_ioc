@@ -27,4 +27,8 @@ public class Wife {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public Wife() {
+        System.out.println("Wife已加载");
+    }
 }
