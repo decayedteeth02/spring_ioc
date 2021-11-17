@@ -3,6 +3,7 @@ package cn.tests;
 import cn.test.beans.Person;
 import cn.test.beans.User;
 import cn.test.beans.Wife;
+import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -70,6 +71,14 @@ public class IocHTest {
     public void test06() {
         Person person = ioc.getBean("person", Person.class);
         System.out.println(person);
+
+    }
+
+//    配置第三方的bean
+    @Test
+    public void test07() {
+        DruidDataSource dataSource=ioc.getBean("dataSource",DruidDataSource.class);
+        System.out.println(dataSource);
 
     }
 }
