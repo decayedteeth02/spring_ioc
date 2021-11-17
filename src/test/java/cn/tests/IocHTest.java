@@ -60,4 +60,6 @@ public class IocHTest {
     Person person=ioc.getBean("person",Person.class);
     System.out.println(person);
 }
+
+
 }

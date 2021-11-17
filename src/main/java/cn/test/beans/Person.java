@@ -91,6 +91,9 @@ public class Person {
         Child child=new Child();
         child.setName("儿子");
         return child;
+    }
 
+    public Person(Wife wife,User user) {
+        this.wife = wife;
     }
 }
