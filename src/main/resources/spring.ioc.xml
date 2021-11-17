@@ -89,6 +89,6 @@
     <bean class="cn.test.beans.Person" id="person2" p:wife-ref="wife">
     </bean>
 
-    
+
 
 </beans>
