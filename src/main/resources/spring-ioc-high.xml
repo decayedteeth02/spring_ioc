@@ -32,13 +32,16 @@
 <!--    优先根据名字去匹配，假设没有匹配到，会根据参数类型去匹配-->
 
 <!--    当根据类型匹配到多个，可以设置某个bean为主要bean-->
-        <bean class="cn.test.beans.Person" id="person" autowire="constructor">
-        </bean>
-    <bean class="cn.test.beans.Wife" id="wife" primary="true">
-        <property name="name" value="迪丽热巴"></property>
-    </bean>
-    <bean class="cn.test.beans.User" id="user"></bean>
+<!--        <bean class="cn.test.beans.Person" id="person" autowire="constructor">-->
+<!--        </bean>-->
+<!--    <bean class="cn.test.beans.Wife" id="wife" primary="true">-->
+<!--        <property name="name" value="迪丽热巴"></property>-->
+<!--    </bean>-->
+<!--    <bean class="cn.test.beans.User" id="user"></bean>-->
 <!--    <bean class="cn.test.beans.Wife" id="wife2">-->
 <!--        <property name="name" value="迪丽热吧"></property>-->
 <!--    </bean>-->
+
+<!--    生命周期回调-->
+    <bean class="cn.test.beans.Person" id="person" init-method="initByConfig" destroy-method="destroyByConfig" ></bean>
 </beans>

@@ -61,5 +61,15 @@ public class IocHTest {
     System.out.println(person);
 }
 
+//    生命周期回调
+//    1.使用接口的方式实现
+//            1.初始化回调，
+//    2.基于配置的实现
 
+    @Test
+    public void test06() {
+        Person person = ioc.getBean("person", Person.class);
+        System.out.println(person);
+
+    }
 }

@@ -1,10 +1,13 @@
 package cn.test.beans;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public class Person {
+public class Person implements InitializingBean,DisposableBean{
     private Integer id;
     private String name;
     private String gender;
@@ -96,4 +99,21 @@ public class Person {
     public Person(Wife wife,User user) {
         this.wife = wife;
     }
+
+    public void afterPropertiesSet() throws Exception{
+        System.out.println("实例化Person1");
+    }
+
+    public void destroy() throws Exception {
+        System.out.println("销毁person1");
+    }
+
+    public void initByConfig() throws Exception{
+        System.out.println("实例化Person2");
+    }
+
+    public void destroyByConfig() throws Exception {
+        System.out.println("销毁person2");
+    }
+
 }

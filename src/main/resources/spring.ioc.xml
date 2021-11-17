@@ -84,10 +84,10 @@
 
 <!--    使用p命名空间简化基于setter属性注入XML配置-->
 
-    <bean class="cn.test.beans.Wife" id="wife" p:age="18" p:name="迪丽热巴">
-    </bean>
-    <bean class="cn.test.beans.Person" id="person2" p:wife-ref="wife">
-    </bean>
+<!--    <bean class="cn.test.beans.Wife" id="wife" p:age="18" p:name="迪丽热巴">-->
+<!--    </bean>-->
+<!--    <bean class="cn.test.beans.Person" id="person2" p:wife-ref="wife">-->
+<!--    </bean>-->
 
 
 
